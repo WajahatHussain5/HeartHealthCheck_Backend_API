@@ -1,0 +1,11 @@
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\x86\Debug\netstandard2.0\MLModel.zip
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.deps.json
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.AssemblyReference.cache
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfoInputs.cache
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfo.cs
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.CoreCompileInputs.cache
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\x86\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DR_AI_DATABASEModelStoreContainer" CdmEntityContainer="DR_AI_DATABASEEntities">
+    <EntitySetMapping Name="ADVANCE_PREDICTION_DATA">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.ADVANCE_PREDICTION_DATA">
+        <MappingFragment StoreEntitySet="ADVANCE_PREDICTION_DATA">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSULTANT_DATA">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.CONSULTANT_DATA">
+        <MappingFragment StoreEntitySet="CONSULTANT_DATA">
+          <ScalarProperty Name="Consultant_Name" ColumnName="Consultant_Name" />
+          <ScalarProperty Name="Consultant_Email" ColumnName="Consultant_Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGULAR_PREDICTION_DATA">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.REGULAR_PREDICTION_DATA">
+        <MappingFragment StoreEntitySet="REGULAR_PREDICTION_DATA">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Maxheartrate" ColumnName="Maxheartrate" />
+          <ScalarProperty Name="Angina" ColumnName="Angina" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="SysBloodpressure" ColumnName="SysBloodpressure" />
+          <ScalarProperty Name="Chestpain" ColumnName="Chestpain" />
+          <ScalarProperty Name="DiasBloodpressure" ColumnName="DiasBloodpressure" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_INFO">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.USER_INFO">
+        <MappingFragment StoreEntitySet="USER_INFO">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email_Status" ColumnName="Email_Status" />
+          <ScalarProperty Name="Register_Date_Time" ColumnName="Register_Date_Time" />
+          <ScalarProperty Name="Fbs" ColumnName="Fbs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_LOGIN">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.USER_LOGIN">
+        <MappingFragment StoreEntitySet="USER_LOGIN">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_REGISTER_DATA">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.USER_REGISTER_DATA">
+        <MappingFragment StoreEntitySet="USER_REGISTER_DATA">
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Time">
+      <EntityTypeMapping TypeName="DR_AI_DATABASEModel.Login_Time">
+        <MappingFragment StoreEntitySet="Login_Time">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

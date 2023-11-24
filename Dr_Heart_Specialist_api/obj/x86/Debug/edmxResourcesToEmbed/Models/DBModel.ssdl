@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DR_AI_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CONSULTANT_DATA">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Consultant_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Consultant_Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DESKTOP DATA\IDE PROJECTS\C# WEB API\DR_HEART_SPECIALIST_API\APP_DATA\DR_AI_DATABASE.MDF.dbo.REGULAR_PREDICTION_DATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="REGULAR_PREDICTION_DATA">
+    <Key>
+      <PropertyRef Name="Age" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Chestpain" />
+      <PropertyRef Name="Bloodpressure" />
+      <PropertyRef Name="Fbs" />
+      <PropertyRef Name="Maxheartrate" />
+      <PropertyRef Name="Angina" />
+      <PropertyRef Name="Diagnosis" />
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Age" Type="float" Nullable="false" />
+    <Property Name="Gender" Type="float" Nullable="false" />
+    <Property Name="Chestpain" Type="float" Nullable="false" />
+    <Property Name="Bloodpressure" Type="float" Nullable="false" />
+    <Property Name="Fbs" Type="float" Nullable="false" />
+    <Property Name="Maxheartrate" Type="float" Nullable="false" />
+    <Property Name="Angina" Type="float" Nullable="false" />
+    <Property Name="Diagnosis" Type="float" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER_LOGIN">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USER_REGISTER_DATA">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="First_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contact_No" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CONSULTANT_DATA_ToTable">
+    <End Role="USER_REGISTER_DATA" Type="Self.USER_REGISTER_DATA" Multiplicity="1" />
+    <End Role="CONSULTANT_DATA" Type="Self.CONSULTANT_DATA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_REGISTER_DATA">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="CONSULTANT_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REGULAR_PREDICTION_DATA_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="REGULAR_PREDICTION_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_REGISTER_DATA_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="USER_REGISTER_DATA" Type="Self.USER_REGISTER_DATA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="USER_REGISTER_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DR_AI_DatabaseModelStoreContainer">
+    <EntitySet Name="CONSULTANT_DATA" EntityType="Self.CONSULTANT_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_REGISTER_DATA" EntityType="Self.USER_REGISTER_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGULAR_PREDICTION_DATA" EntityType="Self.REGULAR_PREDICTION_DATA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [REGULAR_PREDICTION_DATA].[Age] AS [Age], 
+    [REGULAR_PREDICTION_DATA].[Gender] AS [Gender], 
+    [REGULAR_PREDICTION_DATA].[Chestpain] AS [Chestpain], 
+    [REGULAR_PREDICTION_DATA].[Bloodpressure] AS [Bloodpressure], 
+    [REGULAR_PREDICTION_DATA].[Fbs] AS [Fbs], 
+    [REGULAR_PREDICTION_DATA].[Maxheartrate] AS [Maxheartrate], 
+    [REGULAR_PREDICTION_DATA].[Angina] AS [Angina], 
+    [REGULAR_PREDICTION_DATA].[Diagnosis] AS [Diagnosis], 
+    [REGULAR_PREDICTION_DATA].[Username] AS [Username]
+    FROM [dbo].[REGULAR_PREDICTION_DATA] AS [REGULAR_PREDICTION_DATA]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CONSULTANT_DATA_ToTable" Association="Self.FK_CONSULTANT_DATA_ToTable">
+      <End Role="USER_REGISTER_DATA" EntitySet="USER_REGISTER_DATA" />
+      <End Role="CONSULTANT_DATA" EntitySet="CONSULTANT_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REGULAR_PREDICTION_DATA_ToTable" Association="Self.FK_REGULAR_PREDICTION_DATA_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="REGULAR_PREDICTION_DATA" EntitySet="REGULAR_PREDICTION_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_REGISTER_DATA_ToTable" Association="Self.FK_USER_REGISTER_DATA_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="USER_REGISTER_DATA" EntitySet="USER_REGISTER_DATA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0DJv67VtOE6ONKfHDbI6EgAAAAACAAAAAAAQZgAAAAEAACAAAAC4qADeW79haKepsC0JzDRkHa5t3FH6hIpoAKyJ8qGRPwAAAAAOgAAAAAIAACAAAADKyZkiFDsSoEUfigemMqFql/QbEfIa7Nds3HcaloyEiYAAAACVJi1oq/Vjs0zLeVcpCsfdFLTlp+Pow8S2bOj0SD/OPvAEQ3BbyXKrVBs/SrcZiuK714TQgFuxP+PN7OnH5JG0NGHjw76+yLM+i/zkatU6zM3cd25FaXSO/ktJlGLpS/Es6+ezlaAznOLM2alIyAeIMOhtkWmC0cCH3OdqcY493kAAAAAo079Rfqx/T98DdUmY6P6xJIvX4XHYnUqPNylGR0CgbCagupaAYowKhfoCwPchsDb2UDzprRmFZSgWadtrqyJK</EncryptedPassword>
+    <History>True|2022-05-29T18:03:44.9734361Z;True|2022-05-28T17:06:12.4730246+05:00;True|2022-05-28T16:50:35.3504218+05:00;True|2022-05-17T01:26:49.0293884+05:00;True|2022-05-17T01:20:55.1339558+05:00;True|2022-05-17T01:17:58.8240309+05:00;True|2022-05-17T01:16:06.0889698+05:00;True|2022-05-17T01:13:51.6006447+05:00;True|2022-05-17T01:00:48.5817258+05:00;True|2022-05-17T00:49:52.6248040+05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_api\App_Data\DR_AI_Database.mdf;Integrated Security=True;Connect Timeout=30" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:dr-heart-specialist-apidbserver.database.windows.net,1433;Initial Catalog=DR_AI_DATABASE;User Id=Wajahat@dr-heart-specialist-apidbserver;Password=Jaffery55" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:dr-heart-specialist-apidbserver.database.windows.net,1433;Initial Catalog=Dr_Heart_Specialist_api_db;User Id=Wajahat@dr-heart-specialist-apidbserver;Password=Jaffery55" />
+  </ItemGroup>
+</Project>

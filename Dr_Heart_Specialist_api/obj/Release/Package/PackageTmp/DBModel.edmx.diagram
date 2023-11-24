@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb586a13adf44d85bd15f3cc5d0aeecb" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.ADVANCE_PREDICTION_DATA" Width="1.5" PointX="17.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.CONSULTANT_DATA" Width="1.5" PointX="11.625" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.REGULAR_PREDICTION_DATA" Width="1.5" PointX="14.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.USER_INFO" Width="1.5" PointX="19.625" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.USER_LOGIN" Width="1.5" PointX="16" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.USER_REGISTER_DATA" Width="1.5" PointX="13.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.Login_Time" Width="1.5" PointX="13.75" PointY="12.5" IsExpanded="true" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_ADVANCE_PREDICTION_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_CONSULTANT_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_REGULAR_PREDICTION_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_User_Info_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_USER_REGISTER_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_Login_Time" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.USER_PREDICTION_RESULTS" Width="1.5" PointX="19.5" PointY="11.625" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_USER_PREDICTION_RESULTS_ToTable" />
+        <EntityTypeShape EntityType="DR_AI_DATABASEModel.AVG_USER_PREDICTION" Width="1.5" PointX="16.25" PointY="13.375" />
+        <AssociationConnector Association="DR_AI_DATABASEModel.FK_AVG_USER_PREDICTION_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

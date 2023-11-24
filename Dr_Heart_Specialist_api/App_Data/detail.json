@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dbserver_dr-ai-databasedbserver_DR_AI_Database_name": {
+      "type": "string"
+    },
+    "dbserver_dr-ai-databasedbserver_name": {
+      "type": "string"
+    },
+    "dbserver_dr-ai-databasedbserver_DR_AI_Database_adminlogin": {
+      "type": "string"
+    },
+    "dbserver_dr-ai-databasedbserver_DR_AI_Database_adminpassword": {
+      "type": "securestring"
+    },
+    "dbserver_dr-ai-databasedbserver_DR_AI_Database_location": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "location": "[parameters('dbserver_dr-ai-databasedbserver_DR_AI_Database_location')]",
+      "name": "[parameters('dbserver_dr-ai-databasedbserver_name')]",
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2019-06-01-preview",
+      "properties": {
+        "version": "12.0"
+      },
+      "resources": [
+        {
+          "location": "[parameters('dbserver_dr-ai-databasedbserver_DR_AI_Database_location')]",
+          "name": "[parameters('dbserver_dr-ai-databasedbserver_DR_AI_Database_name')]",
+          "type": "databases",
+          "apiVersion": "2019-06-01-preview",
+          "dependsOn": [
+            "[concat('Microsoft.Sql/servers/', parameters('dbserver_dr-ai-databasedbserver_name'))]"
+          ],
+          "sku": {
+            "name": "S0",
+            "tier": "Standard"
+          },
+          "properties": {
+            "collation": "SQL_Latin1_General_CP1_CI_AS",
+            "maxSizeBytes": "1073741824"
+          }
+        }
+      ]
+    }
+  ]
+}

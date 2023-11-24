@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\DRAI_HeartHealthCheck\\Azure_Backend_API\\HeartHealthCheck_Backend_API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj": {}
+  },
+  "projects": {
+    "E:\\DRAI_HeartHealthCheck\\Azure_Backend_API\\HeartHealthCheck_Backend_API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DRAI_HeartHealthCheck\\Azure_Backend_API\\HeartHealthCheck_Backend_API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj",
+        "projectName": "Dr_Heart_Specialist_apiML.Model",
+        "projectPath": "E:\\DRAI_HeartHealthCheck\\Azure_Backend_API\\HeartHealthCheck_Backend_API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj",
+        "packagesPath": "C:\\Users\\Wajahat Hussain\\.nuget\\packages\\",
+        "outputPath": "E:\\DRAI_HeartHealthCheck\\Azure_Backend_API\\HeartHealthCheck_Backend_API\\Dr_Heart_Specialist_apiML.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Installed Software\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Wajahat Hussain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.5.0-preview2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.IO.FileSystem": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

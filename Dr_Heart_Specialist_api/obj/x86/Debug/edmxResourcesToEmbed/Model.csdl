@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DR_AI_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADVANCE_PREDICTION_DATA">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_ADVANCE_PREDICTION_DATA_ToTable" FromRole="ADVANCE_PREDICTION_DATA" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="CONSULTANT_DATA">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Consultant_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Consultant_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="USER_REGISTER_DATA" Relationship="Self.FK_CONSULTANT_DATA_ToTable" FromRole="CONSULTANT_DATA" ToRole="USER_REGISTER_DATA" />
+  </EntityType>
+  <EntityType Name="REGULAR_PREDICTION_DATA">
+    <Key>
+      <PropertyRef Name="Date_Time" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Maxheartrate" Type="Double" Nullable="false" />
+    <Property Name="Angina" Type="Double" Nullable="false" />
+    <Property Name="Diagnosis" Type="Double" Nullable="false" />
+    <Property Name="SysBloodpressure" Type="Double" Nullable="false" />
+    <Property Name="Chestpain" Type="Double" Nullable="false" />
+    <Property Name="DiasBloodpressure" Type="Double" Nullable="false" />
+    <Property Name="Score" Type="Double" Nullable="false" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_REGULAR_PREDICTION_DATA_ToTable" FromRole="REGULAR_PREDICTION_DATA" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Double" Nullable="false" />
+    <Property Name="Gender" Type="Double" Nullable="false" />
+    <Property Name="Email_Status" Type="Boolean" Nullable="false" />
+    <Property Name="Register_Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fbs" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_User_Info_ToTable" FromRole="User_Info" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="USER_LOGIN">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ADVANCE_PREDICTION_DATA" Relationship="Self.FK_ADVANCE_PREDICTION_DATA_ToTable" FromRole="USER_LOGIN" ToRole="ADVANCE_PREDICTION_DATA" />
+    <NavigationProperty Name="REGULAR_PREDICTION_DATA" Relationship="Self.FK_REGULAR_PREDICTION_DATA_ToTable" FromRole="USER_LOGIN" ToRole="REGULAR_PREDICTION_DATA" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_User_Info_ToTable" FromRole="USER_LOGIN" ToRole="User_Info" />
+    <NavigationProperty Name="Login_Time" Relationship="Self.FK_Login_Time" FromRole="USER_LOGIN" ToRole="Login_Time" />
+    <NavigationProperty Name="USER_REGISTER_DATA" Relationship="Self.FK_USER_REGISTER_DATA_ToTable" FromRole="USER_LOGIN" ToRole="USER_REGISTER_DATA" />
+  </EntityType>
+  <EntityType Name="USER_REGISTER_DATA">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact_No" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CONSULTANT_DATA" Relationship="Self.FK_CONSULTANT_DATA_ToTable" FromRole="USER_REGISTER_DATA" ToRole="CONSULTANT_DATA" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_USER_REGISTER_DATA_ToTable" FromRole="USER_REGISTER_DATA" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="Login_Time">
+    <Key>
+      <PropertyRef Name="LoginTime" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_Login_Time" FromRole="Login_Time" ToRole="USER_LOGIN" />
+  </EntityType>
+  <Association Name="FK_ADVANCE_PREDICTION_DATA_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="ADVANCE_PREDICTION_DATA" Type="Self.ADVANCE_PREDICTION_DATA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="ADVANCE_PREDICTION_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONSULTANT_DATA_ToTable">
+    <End Role="USER_REGISTER_DATA" Type="Self.USER_REGISTER_DATA" Multiplicity="1" />
+    <End Role="CONSULTANT_DATA" Type="Self.CONSULTANT_DATA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_REGISTER_DATA">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="CONSULTANT_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REGULAR_PREDICTION_DATA_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="REGULAR_PREDICTION_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_Time">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="Login_Time" Type="Self.Login_Time" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Login_Time">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_REGISTER_DATA_ToTable">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="USER_REGISTER_DATA" Type="Self.USER_REGISTER_DATA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="USER_REGISTER_DATA">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DR_AI_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADVANCE_PREDICTION_DATA" EntityType="Self.ADVANCE_PREDICTION_DATA" />
+    <EntitySet Name="CONSULTANT_DATA" EntityType="Self.CONSULTANT_DATA" />
+    <EntitySet Name="REGULAR_PREDICTION_DATA" EntityType="Self.REGULAR_PREDICTION_DATA" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" />
+    <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" />
+    <EntitySet Name="USER_REGISTER_DATA" EntityType="Self.USER_REGISTER_DATA" />
+    <EntitySet Name="Login_Time" EntityType="Self.Login_Time" />
+    <AssociationSet Name="FK_ADVANCE_PREDICTION_DATA_ToTable" Association="Self.FK_ADVANCE_PREDICTION_DATA_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="ADVANCE_PREDICTION_DATA" EntitySet="ADVANCE_PREDICTION_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONSULTANT_DATA_ToTable" Association="Self.FK_CONSULTANT_DATA_ToTable">
+      <End Role="USER_REGISTER_DATA" EntitySet="USER_REGISTER_DATA" />
+      <End Role="CONSULTANT_DATA" EntitySet="CONSULTANT_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REGULAR_PREDICTION_DATA_ToTable" Association="Self.FK_REGULAR_PREDICTION_DATA_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="REGULAR_PREDICTION_DATA" EntitySet="REGULAR_PREDICTION_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_ToTable" Association="Self.FK_User_Info_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_Time" Association="Self.FK_Login_Time">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="Login_Time" EntitySet="Login_Time" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_REGISTER_DATA_ToTable" Association="Self.FK_USER_REGISTER_DATA_ToTable">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="USER_REGISTER_DATA" EntitySet="USER_REGISTER_DATA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

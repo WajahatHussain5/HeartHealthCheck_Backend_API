@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DR_AI_DatabaseModelStoreContainer" CdmEntityContainer="DR_AI_DatabaseEntities">
+    <EntitySetMapping Name="USER_LOGIN">
+      <EntityTypeMapping TypeName="IsTypeOf(DR_AI_DatabaseModel.USER_LOGIN)">
+        <MappingFragment StoreEntitySet="USER_LOGIN">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_REGISTER_DATA">
+      <EntityTypeMapping TypeName="IsTypeOf(DR_AI_DatabaseModel.USER_REGISTER_DATA)">
+        <MappingFragment StoreEntitySet="USER_REGISTER_DATA">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSULTANT_DATA">
+      <EntityTypeMapping TypeName="IsTypeOf(DR_AI_DatabaseModel.CONSULTANT_DATA)">
+        <MappingFragment StoreEntitySet="CONSULTANT_DATA">
+          <ScalarProperty Name="Consultant_Id" ColumnName="Consultant_Id" />
+          <ScalarProperty Name="Consultant_Name" ColumnName="Consultant_Name" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGULAR_PREDICTION_DATA">
+      <EntityTypeMapping TypeName="DR_AI_DatabaseModel.REGULAR_PREDICTION_DATA">
+        <MappingFragment StoreEntitySet="REGULAR_PREDICTION_DATA">
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Angina" ColumnName="Angina" />
+          <ScalarProperty Name="Maxheartrate" ColumnName="Maxheartrate" />
+          <ScalarProperty Name="Fbs" ColumnName="Fbs" />
+          <ScalarProperty Name="Bloodpressure" ColumnName="Bloodpressure" />
+          <ScalarProperty Name="Chestpain" ColumnName="Chestpain" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

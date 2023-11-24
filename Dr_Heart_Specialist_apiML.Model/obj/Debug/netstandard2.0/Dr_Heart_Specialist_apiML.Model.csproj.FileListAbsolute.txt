@@ -1,0 +1,34 @@
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\MLModel.zip
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.deps.json
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfoInputs.cache
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfo.cs
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.CoreCompileInputs.cache
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+D:\DESKTOP DATA\IDE Projects\C# WEB API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.AssemblyReference.cache
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.deps.json
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfoInputs.cache
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfo.cs
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.CoreCompileInputs.cache
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.AssemblyReference.cache
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\MLModel.zip
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.deps.json
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\bin\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.AssemblyReference.cache
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfoInputs.cache
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfo.cs
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.CoreCompileInputs.cache
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.sourcelink.json
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\obj\Debug\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb

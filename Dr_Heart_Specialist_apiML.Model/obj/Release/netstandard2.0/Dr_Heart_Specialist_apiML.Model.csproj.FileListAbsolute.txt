@@ -1,0 +1,11 @@
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Release\netstandard2.0\MLModel.zip
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.deps.json
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\bin\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfoInputs.cache
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.AssemblyInfo.cs
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.CoreCompileInputs.cache
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.dll
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.pdb
+C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\obj\Release\netstandard2.0\Dr_Heart_Specialist_apiML.Model.csproj.AssemblyReference.cache

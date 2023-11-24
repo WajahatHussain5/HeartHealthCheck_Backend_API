@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/dr-heart-specialist-apidbserver/databases/DR_AI_DATABASE",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:drai",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

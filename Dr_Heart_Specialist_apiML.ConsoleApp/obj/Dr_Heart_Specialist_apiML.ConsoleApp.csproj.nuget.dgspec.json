@@ -1,0 +1,141 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.ConsoleApp\\Dr_Heart_Specialist_apiML.ConsoleApp.csproj": {}
+  },
+  "projects": {
+    "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.ConsoleApp\\Dr_Heart_Specialist_apiML.ConsoleApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.ConsoleApp\\Dr_Heart_Specialist_apiML.ConsoleApp.csproj",
+        "projectName": "Dr_Heart_Specialist_apiML.ConsoleApp",
+        "projectPath": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.ConsoleApp\\Dr_Heart_Specialist_apiML.ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\wajij\\.nuget\\packages\\",
+        "outputPath": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.ConsoleApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Installed Software\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wajij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj": {
+                "projectPath": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.5.0-preview2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj",
+        "projectName": "Dr_Heart_Specialist_apiML.Model",
+        "projectPath": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\Dr_Heart_Specialist_apiML.Model.csproj",
+        "packagesPath": "C:\\Users\\wajij\\.nuget\\packages\\",
+        "outputPath": "D:\\DESKTOP DATA\\IDE Projects\\C# WEB API\\Dr_Heart_Specialist_apiML.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Installed Software\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wajij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.5.0-preview2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
