@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = Dr_Heart_Specialist_apiML.Model
-build_property.ProjectDir = C:\Users\wajij\Desktop\DR_AI_BACKEND\DR_AI_BACKEND\Dr_Heart_Specialist_apiML.Model\
+build_property.ProjectDir = E:\DRAI_HeartHealthCheck\Azure_Backend_API\HeartHealthCheck_Backend_API\Dr_Heart_Specialist_apiML.Model\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

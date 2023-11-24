@@ -422,16 +422,8 @@
     <Content Include="DataBaseEntity\HeartHealthAppDatabase.edmx.diagram">
       <DependentUpon>HeartHealthAppDatabase.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\drai - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\drai - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\draiheartspecialist - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\draiheartspecialist - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\DrHeartSpecialistapi - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\DrHeartSpecialistapi20220416194034.pubxml" />
-    <None Include="Properties\PublishProfiles\DrHeartSpecialistapi20220416194558.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\registry.hub.docker.com_wajaahat55.pubxml" />
-    <None Include="Properties\PublishProfiles\registry.hub.docker.com_wajahat55.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "mssql2": {
+    "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:drai"
+      "connectionId": "HeartHealthAppDB",
+      "dynamicId": null
     }
   }
 }

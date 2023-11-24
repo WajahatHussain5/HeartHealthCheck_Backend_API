@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dr_Heart_Specialist_apiML.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee9817ce7fb3a68bde003cb685b7cab1a8194d9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dr_Heart_Specialist_apiML.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dr_Heart_Specialist_apiML.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
