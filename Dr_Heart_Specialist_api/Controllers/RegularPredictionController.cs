@@ -1,21 +1,28 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.Linq;
+﻿using Dr_Heart_Specialist_api.DataBaseEntity;
 using Dr_Heart_Specialist_api.Models;
 using Dr_Heart_Specialist_api.Models.DataModel;
 using Dr_Heart_Specialist_api.Models.MLmodel;
 using Dr_Heart_Specialist_api.Models.MLmodel.TrainingData;
-using Dr_Heart_Specialist_api.DataBaseEntity;
+using System;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Web.Http;
-
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 
 namespace Dr_Heart_Specialist_api.Controllers
 {
+    /// <summary>
+    /// regular prediction controller.
+    /// </summary>
     public class RegularPredictionController : ApiController
     {
-        HeartHealthAppDatabaseEntitiesEntities db = new HeartHealthAppDatabaseEntitiesEntities();
+        Dr_Heart_Specialist_api_db db = new Dr_Heart_Specialist_api_db();
 
+        /// <summary>
+        /// Regular Prediction API.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult RegularPredict(RegularPredictionData data)
         {
@@ -30,25 +37,25 @@ namespace Dr_Heart_Specialist_api.Controllers
             else
             {
                 DateTime date_time_now = new DateTime();
+
                 Regular_Prediction_Input input = new Regular_Prediction_Input();
 
-                date_time_now = DateTime.Now;
-                input.Age = Convert.ToInt32(Registered_Info.Age);
-                input.Gender = Convert.ToInt32(Registered_Info.Gender);
-                input.Chestpain = data.Chestpain;
+                date_time_now       = DateTime.Now;
+                input.Age           = Convert.ToInt32(Registered_Info.Age);
+                input.Gender        = Convert.ToInt32(Registered_Info.Gender);
+                input.Chestpain     = data.Chestpain;
                 input.Bloodpressure = (data.SysBloodpressure + data.DiasBloodpressure) / 2;
-                input.Fbs = Convert.ToInt32(Registered_Info.Fbs); ;
-                input.Maxheartrate = data.Maxheartrate;
-                input.Anigna = data.Angina;
+                input.Fbs           = Convert.ToInt32(Registered_Info.Fbs); ;
+                input.Maxheartrate  = data.Maxheartrate;
+                input.Anigna        = data.Angina;
 
-                // Load model and predict output of sample data
-
-                var model = new RegularMLModel();
+                var model  = new RegularMLModel();
                 var result = new HeartPrediction();
 
                 try
                 {
                     model.BuildR();
+
                     result = model.ConsumeR(input);
                 }
                 catch (Exception e)
@@ -78,10 +85,10 @@ namespace Dr_Heart_Specialist_api.Controllers
                 //Mapping data to save in User Prediction Result Table
                 User_Prediction_Results save_result = new User_Prediction_Results();
 
-                save_result.Username = data.Username;
+                save_result.Username  = data.Username;
                 save_result.Date_Time = date_time_now;
                 save_result.Diagnosis = Convert.ToInt32(result.Prediction);
-                save_result.Score = result.Probability;
+                save_result.Score     = result.Probability;
 
                 try
                 {
@@ -100,17 +107,18 @@ namespace Dr_Heart_Specialist_api.Controllers
                 //Mapping data to save in User AVG Prediction Table
                 Avg_User_Prediction_Results avg_result = new Avg_User_Prediction_Results();
 
-                avg_result.Username = data.Username;
-                avg_result.Last_Checked = date_time_now;
-                avg_result.Avg_Angina = db.Database.SqlQuery<double>(@"SELECT AVG(Angina) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username;", new SqlParameter("@username", data.Username)).FirstOrDefault();
-                avg_result.Avg_Chestpain = db.Database.SqlQuery<double>(@"SELECT AVG(Chestpain) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
-                avg_result.Avg_SysBloodpressure = db.Database.SqlQuery<double>(@"SELECT AVG(SysBloodpressure) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                avg_result.Username              = data.Username;
+                avg_result.Last_Checked          = date_time_now;
+                avg_result.Avg_Angina            = db.Database.SqlQuery<double>(@"SELECT AVG(Angina) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username;", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                avg_result.Avg_Chestpain         = db.Database.SqlQuery<double>(@"SELECT AVG(Chestpain) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                avg_result.Avg_SysBloodpressure  = db.Database.SqlQuery<double>(@"SELECT AVG(SysBloodpressure) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
                 avg_result.Avg_DiasBloodpressure = db.Database.SqlQuery<double>(@"SELECT AVG(DiasBloodpressure) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
-                avg_result.Avg_Maxheartrate = db.Database.SqlQuery<double>(@"SELECT AVG(Maxheartrate) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
-                avg_result.Avg_Score = db.Database.SqlQuery<double>(@"SELECT AVG(Score) FROM [dbo].[USER_PREDICTION_RESULTS] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
-                var temp = db.Database.SqlQuery<double>(@"SELECT AVG(Diagnosis) FROM [dbo].[USER_PREDICTION_RESULTS] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                avg_result.Avg_Maxheartrate      = db.Database.SqlQuery<double>(@"SELECT AVG(Maxheartrate) FROM [dbo].[REGULAR_PREDICTION_DATA] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                avg_result.Avg_Score             = db.Database.SqlQuery<double>(@"SELECT AVG(Score) FROM [dbo].[USER_PREDICTION_RESULTS] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
+                var temp                         = db.Database.SqlQuery<double>(@"SELECT AVG(Diagnosis) FROM [dbo].[USER_PREDICTION_RESULTS] WHERE Username=@username", new SqlParameter("@username", data.Username)).FirstOrDefault();
 
                 if (temp > 0.5) { avg_result.Avg_Diagnosis = 1; } else { avg_result.Avg_Diagnosis = 0; }
+                
                 //END OF MAPPING
 
                 try

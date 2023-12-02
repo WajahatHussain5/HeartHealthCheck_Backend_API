@@ -158,9 +158,8 @@ namespace Dr_Heart_Specialist_api.Controllers
             ConvertUser.Salt = Salt;
 
             string HashedPassword = PasswordHash.GenerateSha256Hash(user1.Password, Salt);
-
-            HashedPassword       = HashedPassword.Replace("-", string.Empty).Substring(0, 16);
-            ConvertUser.Password = HashedPassword;
+            HashedPassword        = HashedPassword.Replace("-", string.Empty).Substring(0, 16);
+            ConvertUser.Password  = HashedPassword;
 
             return ConvertUser;
         }
