@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Dr_Heart_Specialist_api.Models.DataModel
+﻿namespace Dr_Heart_Specialist_api.Models.DataModel
 {
     public class RegisterUser
     {

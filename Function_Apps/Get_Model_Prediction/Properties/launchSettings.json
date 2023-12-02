@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Get_Model_Prediction": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7132",
+      "launchBrowser": false
+    }
+  }
+}

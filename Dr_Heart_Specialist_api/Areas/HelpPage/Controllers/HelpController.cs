@@ -1,8 +1,8 @@
+using Dr_Heart_Specialist_api.Areas.HelpPage.ModelDescriptions;
+using Dr_Heart_Specialist_api.Areas.HelpPage.Models;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Dr_Heart_Specialist_api.Areas.HelpPage.ModelDescriptions;
-using Dr_Heart_Specialist_api.Areas.HelpPage.Models;
 
 namespace Dr_Heart_Specialist_api.Areas.HelpPage.Controllers
 {

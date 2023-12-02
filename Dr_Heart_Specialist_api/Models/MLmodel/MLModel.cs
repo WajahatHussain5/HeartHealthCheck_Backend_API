@@ -1,9 +1,5 @@
 ﻿using Microsoft.ML;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
 namespace Dr_Heart_Specialist_api.Models.MLmodel
 {
     public class MLModel
@@ -32,6 +28,6 @@ namespace Dr_Heart_Specialist_api.Models.MLmodel
             var predictionEngine = mlContext.Model.CreatePredictionEngine<Advanced_Prediction_Input, HeartPrediction>(trainedModel);
             return predictionEngine.Predict(input);
         }
-     
+
     }
 }

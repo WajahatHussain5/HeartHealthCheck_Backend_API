@@ -3,6 +3,7 @@ using Dr_Heart_Specialist_api.DataBaseEntity;
 using Dr_Heart_Specialist_api.Models;
 using Dr_Heart_Specialist_api.Models.DataModel;
 using System;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -38,11 +39,27 @@ namespace Dr_Heart_Specialist_api.Controllers
 
                 db.USER_REGISTER_DATA.Add(userRegister);
                 db.USER_LOGIN.Add(userLogin);
-                db.CONSULTANT_DATA.Add(userConsultant);
+                //db.CONSULTANT_DATA.Add(userConsultant);
                 db.User_Info.Add(userInfo);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
 
-                return Ok("USER ADDED SUCCESSFULLY");
+                    return Ok("USER ADDED SUCCESSFULLY");
+                }
+                catch (DbEntityValidationException ex) 
+                {
+
+                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            Console.WriteLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                        }
+                    }
+                }
+
+                return Ok("USER CAN NOT BE ADDED ERROR");
             }
             else
             {

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Dr_Heart_Specialist_api_dbModelStoreContainer" CdmEntityContainer="Dr_Heart_Specialist_api_db">
+    <EntitySetMapping Name="ADVANCE_PREDICTION_DATA">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.ADVANCE_PREDICTION_DATA">
+        <MappingFragment StoreEntitySet="ADVANCE_PREDICTION_DATA">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avg_User_Prediction_Results">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.Avg_User_Prediction_Results">
+        <MappingFragment StoreEntitySet="Avg_User_Prediction_Results">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Avg_User_Prediction_Results1" ColumnName="Avg_User_Prediction_Results" />
+          <ScalarProperty Name="Last_Checked" ColumnName="Last_Checked" />
+          <ScalarProperty Name="Avg_Angina" ColumnName="Avg_Angina" />
+          <ScalarProperty Name="Avg_SysBloodpressure" ColumnName="Avg_SysBloodpressure" />
+          <ScalarProperty Name="Avg_DiasBloodpressure" ColumnName="Avg_DiasBloodpressure" />
+          <ScalarProperty Name="Avg_Maxheartrate" ColumnName="Avg_Maxheartrate" />
+          <ScalarProperty Name="Avg_Score" ColumnName="Avg_Score" />
+          <ScalarProperty Name="Avg_Diagnosis" ColumnName="Avg_Diagnosis" />
+          <ScalarProperty Name="Avg_Chestpain" ColumnName="Avg_Chestpain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSULTANT_DATA">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.CONSULTANT_DATA">
+        <MappingFragment StoreEntitySet="CONSULTANT_DATA">
+          <ScalarProperty Name="Consultant_Name" ColumnName="Consultant_Name" />
+          <ScalarProperty Name="Consultant_Email" ColumnName="Consultant_Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Time">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.Login_Time">
+        <MappingFragment StoreEntitySet="Login_Time">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGULAR_PREDICTION_DATA">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.REGULAR_PREDICTION_DATA">
+        <MappingFragment StoreEntitySet="REGULAR_PREDICTION_DATA">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Maxheartrate" ColumnName="Maxheartrate" />
+          <ScalarProperty Name="Angina" ColumnName="Angina" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="SysBloodpressure" ColumnName="SysBloodpressure" />
+          <ScalarProperty Name="Chestpain" ColumnName="Chestpain" />
+          <ScalarProperty Name="DiasBloodpressure" ColumnName="DiasBloodpressure" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="User_Prediction_Results" ColumnName="User_Prediction_Results" />
+          <ScalarProperty Name="Avg_User_Prediction_Results" ColumnName="Avg_User_Prediction_Results" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Info">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.User_Info">
+        <MappingFragment StoreEntitySet="User_Info">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email_Status" ColumnName="Email_Status" />
+          <ScalarProperty Name="Register_Date_Time" ColumnName="Register_Date_Time" />
+          <ScalarProperty Name="Fbs" ColumnName="Fbs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_LOGIN">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.USER_LOGIN">
+        <MappingFragment StoreEntitySet="USER_LOGIN">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Prediction_Results">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.User_Prediction_Results">
+        <MappingFragment StoreEntitySet="User_Prediction_Results">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="User_Prediction_Results1" ColumnName="User_Prediction_Results" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_REGISTER_DATA">
+      <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.USER_REGISTER_DATA">
+        <MappingFragment StoreEntitySet="USER_REGISTER_DATA">
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

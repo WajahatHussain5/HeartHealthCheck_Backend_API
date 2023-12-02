@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Microsoft.ML.Data;
+﻿using Microsoft.ML.Data;
 
 namespace Dr_Heart_Specialist_api.Models
 {

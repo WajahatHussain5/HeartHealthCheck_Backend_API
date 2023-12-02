@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Dr_Heart_Specialist_api.Areas.HelpPage.ModelDescriptions

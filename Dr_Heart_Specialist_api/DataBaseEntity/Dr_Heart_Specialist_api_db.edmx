@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HeartHealthAppDatabaseEntitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Dr_Heart_Specialist_api_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADVANCE_PREDICTION_DATA">
           <Key>
             <PropertyRef Name="Username" />
@@ -34,19 +34,17 @@
           <Property Name="Consultant_Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALTHCHECK_BACKEND_API\DR_HEART_SPECIALIST_API\APP_DATA\HeartHealthAppDatabaseEntities.MDF.dbo.Login_Time' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Login_Time">
           <Key>
-            <PropertyRef Name="Username" />
             <PropertyRef Name="LoginTime" />
           </Key>
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LoginTime" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="REGULAR_PREDICTION_DATA">
           <Key>
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="Date_Time" />
           </Key>
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Date_Time" Type="datetime" Nullable="false" />
@@ -57,6 +55,8 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="Chestpain" Type="float" Nullable="false" />
           <Property Name="DiasBloodpressure" Type="float" Nullable="false" />
           <Property Name="Score" Type="float" Nullable="false" />
+          <Property Name="User_Prediction_Results" Type="float" Nullable="false" />
+          <Property Name="Avg_User_Prediction_Results" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="User_Info">
           <Key>
@@ -95,7 +95,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="First_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Contact_No" Type="int" Nullable="false" />
+          <Property Name="Contact_No" Type="bigint" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_ADVANCE_PREDICTION_DATA_ToTable">
@@ -148,7 +148,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
         </Association>
         <Association Name="FK_REGULAR_PREDICTION_DATA_ToTable">
           <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
-          <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="0..1" />
+          <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USER_LOGIN">
               <PropertyRef Name="Username" />
@@ -194,21 +194,16 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HeartHealthAppDatabaseEntitiesModelStoreContainer">
+        <EntityContainer Name="Dr_Heart_Specialist_api_dbModelStoreContainer">
           <EntitySet Name="ADVANCE_PREDICTION_DATA" EntityType="Self.ADVANCE_PREDICTION_DATA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Avg_User_Prediction_Results" EntityType="Self.Avg_User_Prediction_Results" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONSULTANT_DATA" EntityType="Self.CONSULTANT_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Time" EntityType="Self.Login_Time" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="REGULAR_PREDICTION_DATA" EntityType="Self.REGULAR_PREDICTION_DATA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Info" EntityType="Self.User_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Prediction_Results" EntityType="Self.User_Prediction_Results" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_REGISTER_DATA" EntityType="Self.USER_REGISTER_DATA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Login_Time" EntityType="Self.Login_Time" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Login_Time].[Username] AS [Username], 
-    [Login_Time].[LoginTime] AS [LoginTime]
-    FROM [dbo].[Login_Time] AS [Login_Time]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_ADVANCE_PREDICTION_DATA_ToTable" Association="Self.FK_ADVANCE_PREDICTION_DATA_ToTable">
             <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
             <End Role="ADVANCE_PREDICTION_DATA" EntitySet="ADVANCE_PREDICTION_DATA" />
@@ -246,7 +241,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="HeartHealthAppDatabaseEntitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Dr_Heart_Specialist_api_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ADVANCE_PREDICTION_DATA">
           <Key>
             <PropertyRef Name="Username" />
@@ -279,9 +274,18 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="USER_REGISTER_DATA" Relationship="Self.FK_CONSULTANT_DATA_ToTable" FromRole="CONSULTANT_DATA" ToRole="USER_REGISTER_DATA" />
         </EntityType>
+        <EntityType Name="Login_Time">
+          <Key>
+            <PropertyRef Name="LoginTime" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_Login_Time" FromRole="Login_Time" ToRole="USER_LOGIN" />
+        </EntityType>
         <EntityType Name="REGULAR_PREDICTION_DATA">
           <Key>
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="Date_Time" />
           </Key>
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Date_Time" Type="DateTime" Nullable="false" Precision="3" />
@@ -292,6 +296,8 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="Chestpain" Type="Double" Nullable="false" />
           <Property Name="DiasBloodpressure" Type="Double" Nullable="false" />
           <Property Name="Score" Type="Double" Nullable="false" />
+          <Property Name="User_Prediction_Results" Type="Double" Nullable="false" />
+          <Property Name="Avg_User_Prediction_Results" Type="Double" Nullable="false" />
           <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_REGULAR_PREDICTION_DATA_ToTable" FromRole="REGULAR_PREDICTION_DATA" ToRole="USER_LOGIN" />
         </EntityType>
         <EntityType Name="User_Info">
@@ -316,9 +322,9 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ADVANCE_PREDICTION_DATA" Relationship="Self.FK_ADVANCE_PREDICTION_DATA_ToTable" FromRole="USER_LOGIN" ToRole="ADVANCE_PREDICTION_DATA" />
           <NavigationProperty Name="Avg_User_Prediction_Results" Relationship="Self.FK_Avg_User_Prediction_Results_ToTable" FromRole="USER_LOGIN" ToRole="Avg_User_Prediction_Results" />
+          <NavigationProperty Name="Login_Time" Relationship="Self.FK_Login_Time" FromRole="USER_LOGIN" ToRole="Login_Time" />
           <NavigationProperty Name="REGULAR_PREDICTION_DATA" Relationship="Self.FK_REGULAR_PREDICTION_DATA_ToTable" FromRole="USER_LOGIN" ToRole="REGULAR_PREDICTION_DATA" />
           <NavigationProperty Name="User_Info" Relationship="Self.FK_User_Info_ToTable" FromRole="USER_LOGIN" ToRole="User_Info" />
-          <NavigationProperty Name="Login_Time" Relationship="Self.FK_Login_Time" FromRole="USER_LOGIN" ToRole="Login_Time" />
           <NavigationProperty Name="User_Prediction_Results" Relationship="Self.FK_User_Prediction_Results_ToTable" FromRole="USER_LOGIN" ToRole="User_Prediction_Results" />
           <NavigationProperty Name="USER_REGISTER_DATA" Relationship="Self.FK_USER_REGISTER_DATA_ToTable" FromRole="USER_LOGIN" ToRole="USER_REGISTER_DATA" />
         </EntityType>
@@ -340,19 +346,10 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Contact_No" Type="Int32" Nullable="false" />
+          <Property Name="Contact_No" Type="Int64" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CONSULTANT_DATA" Relationship="Self.FK_CONSULTANT_DATA_ToTable" FromRole="USER_REGISTER_DATA" ToRole="CONSULTANT_DATA" />
           <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_USER_REGISTER_DATA_ToTable" FromRole="USER_REGISTER_DATA" ToRole="USER_LOGIN" />
-        </EntityType>
-        <EntityType Name="Login_Time">
-          <Key>
-            <PropertyRef Name="Username" />
-            <PropertyRef Name="LoginTime" />
-          </Key>
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_Login_Time" FromRole="Login_Time" ToRole="USER_LOGIN" />
         </EntityType>
         <Association Name="FK_ADVANCE_PREDICTION_DATA_ToTable">
           <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
@@ -390,9 +387,21 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Login_Time">
+          <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+          <End Role="Login_Time" Type="Self.Login_Time" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_LOGIN">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Login_Time">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_REGULAR_PREDICTION_DATA_ToTable">
           <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
-          <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="0..1" />
+          <End Role="REGULAR_PREDICTION_DATA" Type="Self.REGULAR_PREDICTION_DATA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USER_LOGIN">
               <PropertyRef Name="Username" />
@@ -410,18 +419,6 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
               <PropertyRef Name="Username" />
             </Principal>
             <Dependent Role="User_Info">
-              <PropertyRef Name="Username" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Login_Time">
-          <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
-          <End Role="Login_Time" Type="Self.Login_Time" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USER_LOGIN">
-              <PropertyRef Name="Username" />
-            </Principal>
-            <Dependent Role="Login_Time">
               <PropertyRef Name="Username" />
             </Dependent>
           </ReferentialConstraint>
@@ -450,16 +447,16 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HeartHealthAppDatabaseEntitiesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Dr_Heart_Specialist_api_db" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ADVANCE_PREDICTION_DATA" EntityType="Self.ADVANCE_PREDICTION_DATA" />
           <EntitySet Name="Avg_User_Prediction_Results" EntityType="Self.Avg_User_Prediction_Results" />
           <EntitySet Name="CONSULTANT_DATA" EntityType="Self.CONSULTANT_DATA" />
+          <EntitySet Name="Login_Time" EntityType="Self.Login_Time" />
           <EntitySet Name="REGULAR_PREDICTION_DATA" EntityType="Self.REGULAR_PREDICTION_DATA" />
           <EntitySet Name="User_Info" EntityType="Self.User_Info" />
           <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" />
           <EntitySet Name="User_Prediction_Results" EntityType="Self.User_Prediction_Results" />
           <EntitySet Name="USER_REGISTER_DATA" EntityType="Self.USER_REGISTER_DATA" />
-          <EntitySet Name="Login_Time" EntityType="Self.Login_Time" />
           <AssociationSet Name="FK_ADVANCE_PREDICTION_DATA_ToTable" Association="Self.FK_ADVANCE_PREDICTION_DATA_ToTable">
             <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
             <End Role="ADVANCE_PREDICTION_DATA" EntitySet="ADVANCE_PREDICTION_DATA" />
@@ -472,6 +469,10 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             <End Role="USER_REGISTER_DATA" EntitySet="USER_REGISTER_DATA" />
             <End Role="CONSULTANT_DATA" EntitySet="CONSULTANT_DATA" />
           </AssociationSet>
+          <AssociationSet Name="FK_Login_Time" Association="Self.FK_Login_Time">
+            <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+            <End Role="Login_Time" EntitySet="Login_Time" />
+          </AssociationSet>
           <AssociationSet Name="FK_REGULAR_PREDICTION_DATA_ToTable" Association="Self.FK_REGULAR_PREDICTION_DATA_ToTable">
             <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
             <End Role="REGULAR_PREDICTION_DATA" EntitySet="REGULAR_PREDICTION_DATA" />
@@ -479,10 +480,6 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
           <AssociationSet Name="FK_User_Info_ToTable" Association="Self.FK_User_Info_ToTable">
             <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
             <End Role="User_Info" EntitySet="User_Info" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Login_Time" Association="Self.FK_Login_Time">
-            <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
-            <End Role="Login_Time" EntitySet="Login_Time" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Prediction_Results_ToTable" Association="Self.FK_User_Prediction_Results_ToTable">
             <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
@@ -498,16 +495,16 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HeartHealthAppDatabaseEntitiesModelStoreContainer" CdmEntityContainer="HeartHealthAppDatabaseEntitiesEntities">
+        <EntityContainerMapping StorageEntityContainer="Dr_Heart_Specialist_api_dbModelStoreContainer" CdmEntityContainer="Dr_Heart_Specialist_api_db">
           <EntitySetMapping Name="ADVANCE_PREDICTION_DATA">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.ADVANCE_PREDICTION_DATA">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.ADVANCE_PREDICTION_DATA">
               <MappingFragment StoreEntitySet="ADVANCE_PREDICTION_DATA">
                 <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Avg_User_Prediction_Results">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.Avg_User_Prediction_Results">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.Avg_User_Prediction_Results">
               <MappingFragment StoreEntitySet="Avg_User_Prediction_Results">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Avg_User_Prediction_Results1" ColumnName="Avg_User_Prediction_Results" />
@@ -523,7 +520,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CONSULTANT_DATA">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.CONSULTANT_DATA">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.CONSULTANT_DATA">
               <MappingFragment StoreEntitySet="CONSULTANT_DATA">
                 <ScalarProperty Name="Consultant_Name" ColumnName="Consultant_Name" />
                 <ScalarProperty Name="Consultant_Email" ColumnName="Consultant_Email" />
@@ -531,8 +528,17 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Login_Time">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.Login_Time">
+              <MappingFragment StoreEntitySet="Login_Time">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="REGULAR_PREDICTION_DATA">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.REGULAR_PREDICTION_DATA">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.REGULAR_PREDICTION_DATA">
               <MappingFragment StoreEntitySet="REGULAR_PREDICTION_DATA">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
@@ -543,11 +549,13 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
                 <ScalarProperty Name="Chestpain" ColumnName="Chestpain" />
                 <ScalarProperty Name="DiasBloodpressure" ColumnName="DiasBloodpressure" />
                 <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="User_Prediction_Results" ColumnName="User_Prediction_Results" />
+                <ScalarProperty Name="Avg_User_Prediction_Results" ColumnName="Avg_User_Prediction_Results" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Info">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.User_Info">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.User_Info">
               <MappingFragment StoreEntitySet="User_Info">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
@@ -559,7 +567,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USER_LOGIN">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.USER_LOGIN">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.USER_LOGIN">
               <MappingFragment StoreEntitySet="USER_LOGIN">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -569,7 +577,7 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Prediction_Results">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.User_Prediction_Results">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.User_Prediction_Results">
               <MappingFragment StoreEntitySet="User_Prediction_Results">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="User_Prediction_Results1" ColumnName="User_Prediction_Results" />
@@ -580,21 +588,13 @@ warning 6002: The table/view 'A7296942122909EAD81BAA45320AB88D_ND_API\HEARTHEALT
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USER_REGISTER_DATA">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.USER_REGISTER_DATA">
+            <EntityTypeMapping TypeName="Dr_Heart_Specialist_api_dbModel.USER_REGISTER_DATA">
               <MappingFragment StoreEntitySet="USER_REGISTER_DATA">
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Login_Time">
-            <EntityTypeMapping TypeName="HeartHealthAppDatabaseEntitiesModel.Login_Time">
-              <MappingFragment StoreEntitySet="Login_Time">
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

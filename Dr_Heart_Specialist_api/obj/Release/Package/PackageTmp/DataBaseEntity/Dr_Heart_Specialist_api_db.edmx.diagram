@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2bf768c7578841d9b5ca7f79ed92451e" Name="Diagram1">
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.ADVANCE_PREDICTION_DATA" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.Avg_User_Prediction_Results" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.CONSULTANT_DATA" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.Login_Time" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.REGULAR_PREDICTION_DATA" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.User_Info" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.USER_LOGIN" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.User_Prediction_Results" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dr_Heart_Specialist_api_dbModel.USER_REGISTER_DATA" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_ADVANCE_PREDICTION_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_Avg_User_Prediction_Results_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_CONSULTANT_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_Login_Time" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_REGULAR_PREDICTION_DATA_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_User_Info_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_User_Prediction_Results_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Dr_Heart_Specialist_api_dbModel.FK_USER_REGISTER_DATA_ToTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

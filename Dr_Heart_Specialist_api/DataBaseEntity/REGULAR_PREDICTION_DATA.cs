@@ -23,6 +23,8 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
         public double Chestpain { get; set; }
         public double DiasBloodpressure { get; set; }
         public double Score { get; set; }
+        public double User_Prediction_Results { get; set; }
+        public double Avg_User_Prediction_Results { get; set; }
     
         public virtual USER_LOGIN USER_LOGIN { get; set; }
     }

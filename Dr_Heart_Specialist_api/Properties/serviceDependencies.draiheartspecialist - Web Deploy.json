@@ -3,9 +3,9 @@
     "mssql1": {
       "serviceConnectorResourceId": "",
       "secretStore": "AzureAppSettings",
+      "resourceId": null,
       "type": "mssql.onprem",
-      "connectionId": "HeartHealthAppDB",
-      "dynamicId": null
+      "connectionId": "HeartHealthAppDB"
     }
   }
 }

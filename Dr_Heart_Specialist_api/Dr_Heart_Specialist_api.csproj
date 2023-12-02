@@ -242,46 +242,46 @@
     <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Controllers\UserRegisterController.cs" />
     <Compile Include="DataBaseEntity\ADVANCE_PREDICTION_DATA.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\Avg_User_Prediction_Results.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\CONSULTANT_DATA.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseEntity\HeartHealthAppDatabase.Context.cs">
+    <Compile Include="DataBaseEntity\Dr_Heart_Specialist_api_db.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartHealthAppDatabase.Context.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseEntity\HeartHealthAppDatabase.cs">
+    <Compile Include="DataBaseEntity\Dr_Heart_Specialist_api_db.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseEntity\HeartHealthAppDatabase.Designer.cs">
+    <Compile Include="DataBaseEntity\Dr_Heart_Specialist_api_db.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HeartHealthAppDatabase.edmx</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\Login_Time.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\REGULAR_PREDICTION_DATA.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\User_Info.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\USER_LOGIN.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\User_Prediction_Results.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseEntity\USER_REGISTER_DATA.cs">
-      <DependentUpon>HeartHealthAppDatabase.tt</DependentUpon>
+      <DependentUpon>Dr_Heart_Specialist_api_db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataModel\RegisterUser.cs" />
     <Compile Include="Global.asax.cs">
@@ -306,15 +306,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DataBaseEntity\HeartHealthAppDatabase.Context.tt">
+    <Content Include="DataBaseEntity\Dr_Heart_Specialist_api_db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HeartHealthAppDatabase.edmx</DependentUpon>
-      <LastGenOutput>HeartHealthAppDatabase.Context.cs</LastGenOutput>
+      <DependentUpon>Dr_Heart_Specialist_api_db.edmx</DependentUpon>
+      <LastGenOutput>Dr_Heart_Specialist_api_db.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataBaseEntity\HeartHealthAppDatabase.tt">
+    <Content Include="DataBaseEntity\Dr_Heart_Specialist_api_db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HeartHealthAppDatabase.edmx</DependentUpon>
-      <LastGenOutput>HeartHealthAppDatabase.cs</LastGenOutput>
+      <DependentUpon>Dr_Heart_Specialist_api_db.edmx</DependentUpon>
+      <LastGenOutput>Dr_Heart_Specialist_api_db.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -415,12 +415,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Models\MLmodel\TrainingData\Advanced_Training_Data.csv" />
-    <EntityDeploy Include="DataBaseEntity\HeartHealthAppDatabase.edmx">
+    <EntityDeploy Include="DataBaseEntity\Dr_Heart_Specialist_api_db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HeartHealthAppDatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>Dr_Heart_Specialist_api_db.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DataBaseEntity\HeartHealthAppDatabase.edmx.diagram">
-      <DependentUpon>HeartHealthAppDatabase.edmx</DependentUpon>
+    <Content Include="DataBaseEntity\Dr_Heart_Specialist_api_db.edmx.diagram">
+      <DependentUpon>Dr_Heart_Specialist_api_db.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\draiheartspecialist - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\draiheartspecialist - Web Deploy.pubxml" />

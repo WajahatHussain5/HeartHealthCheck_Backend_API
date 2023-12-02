@@ -13,10 +13,10 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HeartHealthAppDatabaseEntitiesEntities : DbContext
+    public partial class Dr_Heart_Specialist_api_db : DbContext
     {
-        public HeartHealthAppDatabaseEntitiesEntities()
-            : base("name=HeartHealthAppDatabaseEntitiesEntities")
+        public Dr_Heart_Specialist_api_db()
+            : base("name=Dr_Heart_Specialist_api_db")
         {
         }
     
@@ -28,11 +28,11 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
         public virtual DbSet<ADVANCE_PREDICTION_DATA> ADVANCE_PREDICTION_DATA { get; set; }
         public virtual DbSet<Avg_User_Prediction_Results> Avg_User_Prediction_Results { get; set; }
         public virtual DbSet<CONSULTANT_DATA> CONSULTANT_DATA { get; set; }
+        public virtual DbSet<Login_Time> Login_Time { get; set; }
         public virtual DbSet<REGULAR_PREDICTION_DATA> REGULAR_PREDICTION_DATA { get; set; }
         public virtual DbSet<User_Info> User_Info { get; set; }
         public virtual DbSet<USER_LOGIN> USER_LOGIN { get; set; }
         public virtual DbSet<User_Prediction_Results> User_Prediction_Results { get; set; }
         public virtual DbSet<USER_REGISTER_DATA> USER_REGISTER_DATA { get; set; }
-        public virtual DbSet<Login_Time> Login_Time { get; set; }
     }
 }

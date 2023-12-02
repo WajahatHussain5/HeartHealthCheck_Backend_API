@@ -18,6 +18,7 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
         public USER_LOGIN()
         {
             this.Login_Time = new HashSet<Login_Time>();
+            this.REGULAR_PREDICTION_DATA = new HashSet<REGULAR_PREDICTION_DATA>();
         }
     
         public string Username { get; set; }
@@ -27,10 +28,11 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
     
         public virtual ADVANCE_PREDICTION_DATA ADVANCE_PREDICTION_DATA { get; set; }
         public virtual Avg_User_Prediction_Results Avg_User_Prediction_Results { get; set; }
-        public virtual REGULAR_PREDICTION_DATA REGULAR_PREDICTION_DATA { get; set; }
-        public virtual User_Info User_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Login_Time> Login_Time { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REGULAR_PREDICTION_DATA> REGULAR_PREDICTION_DATA { get; set; }
+        public virtual User_Info User_Info { get; set; }
         public virtual User_Prediction_Results User_Prediction_Results { get; set; }
         public virtual USER_REGISTER_DATA USER_REGISTER_DATA { get; set; }
     }

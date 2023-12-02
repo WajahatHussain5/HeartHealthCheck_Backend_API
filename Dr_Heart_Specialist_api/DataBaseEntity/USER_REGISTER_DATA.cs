@@ -17,7 +17,7 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Address { get; set; }
-        public int Contact_No { get; set; }
+        public long Contact_No { get; set; }
         public string Username { get; set; }
     
         public virtual CONSULTANT_DATA CONSULTANT_DATA { get; set; }

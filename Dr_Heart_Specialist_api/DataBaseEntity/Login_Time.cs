@@ -16,6 +16,7 @@ namespace Dr_Heart_Specialist_api.DataBaseEntity
     {
         public string Username { get; set; }
         public System.DateTime LoginTime { get; set; }
+        public string Email { get; set; }
     
         public virtual USER_LOGIN USER_LOGIN { get; set; }
     }

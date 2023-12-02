@@ -57,6 +57,7 @@ namespace Dr_Heart_Specialist_api.Controllers
                         
                         data.Username  = user.Username;
                         data.LoginTime = DateTime.Now;
+                        data.Email     = Registered_User.Email;
 
                         db.Login_Time.Add(data);
                         db.SaveChanges();
